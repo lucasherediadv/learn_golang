@@ -11,15 +11,22 @@ func TestHello(t *testing.T) {
     // Sometimes it is useful to group tests around a "thing" and then
     // have subtests describing different scenarios
     t.Run("saying hello to people", func(t *testing.T) {
-        got := Hello("Lucas")
+        got := Hello("Lucas", "")
         want := "Hello, Lucas"
         assertCorrectMessage(t, got, want)
     })
 
-    t.Run("say 'Hello, World' when an empty string is supplied", func(t *testing.T) {
-        got := Hello("")
+    t.Run("empty string defaults to 'world'", func(t *testing.T) {
+        // FIXME
+        got := Hello("", "")
         want := "Hello, World"
-        assertCorrectMessage(t, got , want)
+        assertCorrectMessage(t, got, want)
+    })
+    
+    t.Run("in Spanish", func(t *testing.T) {
+        got := Hello("Lucas", "Spanish")
+        want := "Hola, Lucas"
+        assertCorrectMessage(t, got, want)
     })
 }
 
