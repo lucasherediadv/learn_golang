@@ -6,3 +6,5 @@
 
 - Be confident that you'll be able to start writing roubust, well-tested systems in Go.
 
+[Learn Go with tests](https://quii.gitbook.io/learn-go-with-tests)
+
